@@ -1,18 +1,3 @@
-<?php
-if(isset($_POST['contact_btn'])){
-    $name=$_POST['user_name'];
-    $email=$_POST['user_email'];
-    $subject=$_POST['user_subject'];
-    $msg=$_POST['user_message'];
-    $to="nallavedavathi@gmail.com";
-    $header="from:$email";
-    if(mail($to,$subject,$msg,$header)){
-        $msg1="Message submitted successfully";
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,9 +35,9 @@ if(isset($_POST['contact_btn'])){
         </div>
     </div> -->
 
-    <div id="particles-js"></div>
-    <header class="container header active" id="home">
 
+    <header class="container header active" id="home">
+        <div id="particles-js"></div>
         <div class="header-content">
             <div class="right-header">
                 <span class="purple">WELCOME! </span>
@@ -465,7 +450,7 @@ if(isset($_POST['contact_btn'])){
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="right-contact">
+                    <div class="right-contact">
                         <p>Write to me</p>
                         <form action="https://formsubmit.co/bc59bc2186e6569b83fc8569ffe4a5c1" method="POST" class="contact-form">
                             <div class="input-control i-c-2">
@@ -479,48 +464,6 @@ if(isset($_POST['contact_btn'])){
                                 <textarea name="message" required id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
                             </div>
                             <input type="hidden" name="_captcha" value="false">
-                            <div class="button-container">
-                                <input name="contact_btn" type="submit" class="submit-btn
-                                " value="Submit">
-                            </div>
-                            <div id="popup-message" class="popup">
-                                <p>Your message has been submitted!</p>
-                            </div>
-
-                            <script>
-                                const submitButton = document.querySelector('.submit-button');
-                                const popupMessage = document.getElementById('popup-message');
-
-                                submitButton.addEventListener('click', function(event) {
-                                    event.preventDefault();
-                                    popupMessage.classList.add('show-popup');
-                                    setTimeout(function() {
-                                        popupMessage.classList.remove('show-popup');
-                                    }, 3000);
-                                });
-                            </script>
-                        </form>
-                    </div> -->
-
-                    <div class="right-contact">
-                        <p>Write to me</p>
-                        <strong>
-                            <?php if(!empty($msg1)){
-                                echo $msg1;
-                            }?>
-                            </strong>
-                        <form method="POST" class="contact-form">
-                            <div class="input-control i-c-2">
-                                <input name="user_name" type="text" required placeholder="YOUR NAME">
-
-                                <input name="user_email" type="email" required placeholder="YOUR EMAIL">
-                            </div>
-                            <div class="input-control">
-                                <input name="user_subject" type="text" required placeholder="ENTER SUBJECT">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="user_message" required id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
-                            </div>
                             <div class="button-container">
                                 <input name="contact_btn" type="submit" class="submit-btn
                                 " value="Submit">
@@ -558,10 +501,17 @@ if(isset($_POST['contact_btn'])){
         <div class="control" data-id="portfolio">
             <i class="fas fa-briefcase"></i>
         </div>
+        <!-- <div class="control" data-id="blogs">
+            <i class="far fa-newspaper"></i>
+        </div> -->
+
         <div class="control" data-id="contact">
             <i class="fas fa-envelope-open"></i>
         </div>
     </div>
+    <!-- <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div> -->
     <script src="app.js"></script>
     <script>
         // Simulating a delay before showing the content
